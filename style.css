@@ -1,50 +1,209 @@
-/* ... keep your existing root variables and body styles ... */
+/* Import Inter Font from Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* TAB NAVIGATION STYLES */
+:root {
+    /* Modern Dark Theme Palette */
+    --bg-body: #121212;         /* Very dark gray/black */
+    --bg-card: #1e1e1e;         /* Slightly lighter for elements */
+    --bg-card-hover: #252525;   /* Hover state */
+    
+    --text-main: #e0e0e0;       /* Off-white for readability */
+    --text-muted: #a0a0a0;      /* Gray for secondary text */
+    
+    --accent: #f37726;          /* Jupyter Orange */
+    --accent-glow: rgba(243, 119, 38, 0.3);
+    
+    --border-color: #333333;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif; /* The "website-y" font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER SECTION */
+header {
+    background-color: var(--bg-card);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em; /* Tightens large text for a modern look */
+    color: #ffffff;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* TABS NAVIGATION */
 .tab-container {
     display: flex;
     justify-content: center;
-    background-color: var(--secondary-color);
-    padding: 0;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #333;
-    flex-wrap: wrap; /* Wraps on small screens */
+    background-color: var(--bg-card);
+    padding: 0 1rem;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100; /* Keeps tabs visible when scrolling */
+    backdrop-filter: blur(10px); /* Glass morphism effect if supported */
 }
 
 .tab-btn {
-    background-color: transparent;
+    background: transparent;
     border: none;
-    outline: none;
+    color: var(--text-muted);
+    padding: 1.2rem 1.5rem;
     cursor: pointer;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    color: #888;
-    transition: 0.3s;
-    border-bottom: 3px solid transparent;
-    font-family: var(--font-main);
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
 }
 
 .tab-btn:hover {
     color: #fff;
-    background-color: #252525;
+    background-color: rgba(255,255,255, 0.05);
 }
 
 .tab-btn.active {
-    color: var(--accent-color);
-    border-bottom: 3px solid var(--accent-color);
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
 }
 
-/* HIDE CONTENT BY DEFAULT */
+/* CARDS & SECTIONS */
 .tab-content {
     display: none;
-    animation: fadeEffect 0.5s;
+    animation: fadeIn 0.4s ease;
 }
 
-/* Animation for smooth switching */
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ... keep your existing card, grid, and container styles ... */
+h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+}
+
+h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    border-color: #444;
+}
+
+/* LISTS INSIDE CARDS */
+ul {
+    padding-left: 1.2rem;
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+strong {
+    color: #fff;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn:hover {
+    background-color: #ff8c42; /* Lighter orange */
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-container {
+        flex-direction: column;
+        position: static;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        border-left: 3px solid transparent;
+    }
+
+    .tab-btn.active {
+        border-bottom: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}

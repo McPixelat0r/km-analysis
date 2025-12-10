@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KM Tools Analysis: Jupyter vs. Tableau</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>The Researcher's Workbench vs. The Executive's Dashboard</h1>
+      <p class="subtitle">INFO 4307 Final Project | Juan Jose Cuen Alcelay</p>
+    </header>
+
+    <div class="tab-container">
+      <button class="tab-btn active" onclick="openTab(event, 'overview')">
+        1. Overview & Definitions
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'analysis')">
+        2. Comparative Analysis
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'dimensions')">
+        3. The 6 Dimensions
+      </button>
+      <button class="tab-btn" onclick="openTab(event, 'presentation')">
+        4. Presentation Slides
+      </button>
+    </div>
+
+    <div class="container">
+      <div id="overview" class="tab-content" style="display: block">
+        <section>
+          <h2>Defining Knowledge Management</h2>
+          <p>
+            <strong>Knowledge Management (KM) Tools & Technologies</strong> are
+            the specific IT systems used to manage intellectual resources within
+            an organization. They facilitate the creation, capture, sharing, and
+            effective use of organizational knowledge to support
+            decision-making.
+          </p>
+        </section>
+
+        <section>
+          <h2>Tool Definitions</h2>
+          <div class="comparison-grid">
+            <div class="card">
+              <h3>Jupyter Notebooks</h3>
+              [cite_start]
+              <p>
+                An open-source interactive computing environment allowing users
+                to create documents with live code, equations, and narrative
+                text[cite: 22].
+              </p>
+              <p>
+                <strong>Primary Use:</strong> Research, Data Science, Education.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Tableau</h3>
+              <p>
+                A business intelligence and data visualization tool that allows
+                users to create interactive dashboards via a drag-and-drop
+                interface.
+              </p>
+              <p>
+                <strong>Primary Use:</strong> Business Intelligence, Executive
+                Reporting.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="analysis" class="tab-content">
+        <h2>Comparative Analysis</h2>
+
+        <div class="card">
+          <h3>Benefits & Opportunities</h3>
+          <ul>
+            <li>
+              <strong>Jupyter:</strong> Unmatched storytelling (text + code).
+              Free/Open Source (FOSS). [cite_start]Infinite flexibility via
+              Python libraries[cite: 31, 34].
+            </li>
+            <li>
+              <strong>Tableau:</strong> Rapid "Speed to Insight" for non-coders.
+              Native connectors to hundreds of enterprise data sources.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Challenges & Limitations</h3>
+          <ul>
+            <li>
+              <strong>Jupyter:</strong> Computational Reproducibility (hidden
+              state issues). [cite_start]Poor readability for large files
+              ("spaghetti code")[cite: 36].
+            </li>
+            <li>
+              <strong>Tableau:</strong> "Black Box" logic (hard to verify
+              calculations). High cost ($70+/user/month). Vendor lock-in.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Scalability & Cost</h3>
+          <ul>
+            <li>
+              <strong>Jupyter:</strong> Scales computationally (server-side) but
+              scales poorly regarding document management.
+              <strong>Cost:</strong> Free ($0).
+            </li>
+            <li>
+              <strong>Tableau:</strong> Scales well for massive datasets but
+              costs scale linearly with headcount. <strong>Cost:</strong> High.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="dimensions" class="tab-content">
+        <h2>Analysis via The 6 Dimensions of KM</h2>
+        <p style="margin-bottom: 2rem; color: #888">
+          Based on framework: knowledge-management-tools.net
+        </p>
+
+        <div class="comparison-grid">
+          <div class="card">
+            <h3>I. Strategy</h3>
+            <p>
+              <strong>Jupyter (Innovation):</strong> Supports a "bottom-up"
+              strategy of creation and experimentation.
+            </p>
+            <p>
+              <strong>Tableau (Decision):</strong> Supports a "top-down"
+              strategy of disseminating facts for executive decisions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>II. Organizational Culture</h3>
+            <p>
+              <strong>Jupyter:</strong> <em>Adhocracy.</em> Encourages sharing,
+              peer review, and transparency ("Show your work").
+            </p>
+            <p>
+              <strong>Tableau:</strong> <em>Hierarchy.</em> Emphasizes
+              efficiency, standardization, and polished results.
+            </p>
+          </div>
+          <div class="card">
+            <h3>III. Processes</h3>
+            <p>
+              <strong>Jupyter:</strong> Iterative/Scientific Method (Hypothesize
+              -> Code -> Fail -> Fix).
+            </p>
+            <p>
+              <strong>Tableau:</strong> Linear Pipeline (Data Prep -> Visualize
+              -> Publish).
+            </p>
+          </div>
+          <div class="card">
+            <h3>IV. Management & Leadership</h3>
+            <p>
+              <strong>Jupyter:</strong> Decentralized. Leaders act as "enablers"
+              providing resources.
+            </p>
+            <p>
+              <strong>Tableau:</strong> Centralized. Leaders act as
+              "gatekeepers" controlling access and governance.
+            </p>
+          </div>
+          <div class="card">
+            <h3>V. Technology</h3>
+            <p>
+              <strong>Jupyter:</strong> Open Standards (JSON, Python). Highly
+              interoperable.
+            </p>
+            <p>
+              <strong>Tableau:</strong> Proprietary (VizQL). Closed ecosystem
+              ("Walled Garden").
+            </p>
+          </div>
+          <div class="card">
+            <h3>VI. Politics</h3>
+            <p>
+              <strong>Jupyter:</strong> Democratized access (no license fees).
+              Risk of "Shadow IT".
+            </p>
+            <p>
+              <strong>Tableau:</strong> Restricted access. Politics arise over
+              budget allocation for licenses.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="presentation" class="tab-content">
+        <h2>Final Presentation</h2>
+        <p>Below you can download the slides accompanying this research.</p>
+
+        <div class="card" style="text-align: center; padding: 3rem">
+          <h3>INFO 4307 Final Project Slides</h3>
+          <p>Format: PDF (Generated from Presentation)</p>
+          <br />
+          <a href="presentation.pdf" class="btn" download
+            >Download Slides (PDF)</a
+          >
+        </div>
+
+        <h3>References & Citations</h3>
+        <ul style="font-size: 0.9rem; color: #aaa">
+          <li>[1] Knowledge Management Tools & Tech (Course Material)</li>
+          <li>
+            [22] Granger, B. E., & Perez, F. (2021). Jupyter: Thinking and
+            storytelling.
+          </li>
+          <li>[4.1] The Pros and Cons of Tableau (2025).</li>
+          <li><em>See full bibliography in attached PDF.</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Juan Jose Cuen Alcelay. Built for INFO 4307.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

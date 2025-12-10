@@ -1,0 +1,50 @@
+/* ... keep your existing root variables and body styles ... */
+
+/* TAB NAVIGATION STYLES */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    padding: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap; /* Wraps on small screens */
+}
+
+.tab-btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #888;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background-color: #252525;
+}
+
+.tab-btn.active {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* HIDE CONTENT BY DEFAULT */
+.tab-content {
+    display: none;
+    animation: fadeEffect 0.5s;
+}
+
+/* Animation for smooth switching */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* ... keep your existing card, grid, and container styles ... */

@@ -1,145 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jupyter vs. Tableau - Comparative Analysis</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Jupyter vs Tableau – Knowledge Management Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comparative analysis of Jupyter Notebooks and Tableau through the lens of Knowledge Management." />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-
-    <nav id="navbar">
-        <ul>
-            <li><a href="#intro" class="nav-link">Introduction</a></li>
-            <li><a href="#analysis" class="nav-link">Comparative Analysis</a></li>
-            <li><a href="#dimensions" class="nav-link">6 Dimensions</a></li>
-            <li><a href="#references" class="nav-link">References</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <div class="container">
-            <h1>Comparative Analysis of KM Tools: Jupyter vs. Tableau</h1>
-            <div class="meta-info">
-                <span><strong>Student:</strong> Juan Jose Cuen Alcelay</span>
-                <span><strong>Course:</strong> INFO 4307 – Knowledge Management Tools and Technologies</span>
-                <span><strong>Date:</strong> December 10, 2025</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container main-content">
-
-        <section id="intro">
-            <h2>1. Introduction & Definitions</h2>
-
-            <div class="tool-block jupyter-block">
-                <span class="tool-title jupyter-text">Jupyter Notebooks (The Researcher’s Workbench)</span>
-                <p>Jupyter Notebooks are open-source, interactive computing environments originally developed from Project IPython. Perez and Granger (2007) describe the system as providing “the best possible interactive environment for everyday computing tasks” (p. 22). The notebook format combines executable code, narrative text, equations, and visualizations into a unified document suitable for experimentation and communication.</p>
-                <p>Granger and Perez (2021) frame this workflow as <em>human-in-the-loop computing</em>, where users iteratively write code, run cells, and interpret results within a transparent computing environment.</p>
-                <p><strong>Primary users:</strong> Researchers, data scientists, engineers, and educators.</p>
-            </div>
-
-            <div class="tool-block tableau-block">
-                <span class="tool-title tableau-text">Tableau (The Executive’s Dashboard)</span>
-                <p>Tableau is a modern Business Intelligence platform built on a proprietary technology called VizQL. According to Tableau Software (n.d.-b), VizQL “is essentially a translator of SQL queries that traditionally return numbers and tables into an effortless visual analysis.”</p>
-                <p>Tableau emphasizes rapid discovery for non-technical users by allowing them to describe what they want to see rather than how to compute it. The company states that its mission is to “help people see and understand data” (Tableau Software, n.d.-c).</p>
-                <p><strong>Primary users:</strong> Executives, business analysts, and decision-makers.</p>
-            </div>
-        </section>
-
-        <section id="analysis">
-            <h2>2. Comparative Analysis</h2>
-
-            <h3>A. Benefits & Opportunities</h3>
-            <p><strong>Jupyter (Storytelling):</strong> Jupyter excels at narrative-driven analysis. Chen and Asta (2022) describe how notebooks can integrate “prose, graphics, slides, and discussion questions” into a single learning or research document (p. 3601). This structure enables analysts to communicate findings while embedding code and outputs directly in context.</p>
-            <p><strong>Tableau (Democratization):</strong> Tableau removes the technical barrier of coding by allowing users to construct visualizations through drag-and-drop operations. VizQL’s declarative interface enables users to “describe what picture should be created, not necessarily how to make it” (Tableau Software, n.d.-b).</p>
-
-            <h3>B. Challenges & Limitations</h3>
-            <p><strong>Jupyter (Reproducibility):</strong> A key challenge is computational reproducibility. Samuel and Mietchen (2024) note that when notebooks are executed in different environments or run out of order, results can diverge due to hidden execution states (p. 2). Beg et al. (2021) also add that large monolithic notebooks can become difficult to navigate.</p>
-            <p><strong>Tableau (Design Consistency & Governance):</strong> At organizational scale, Tableau dashboards often suffer from inconsistency. Srinivasan (2025) highlights the phenomenon of the “dashboard zoo,” where ungoverned dashboard proliferation leads to clutter and variability in design quality.</p>
-
-            <h3>C. Scalability & Performance</h3>
-            <p><strong>Jupyter:</strong> Computing performance is strong because underlying libraries (NumPy, SciPy) are implemented in low-level languages like C and Fortran (Perez & Granger, 2007). However, notebooks scale poorly in terms of human readability when codebases grow large.</p>
-            <p><strong>Tableau:</strong> Tableau is designed for horizontal scalability and can natively query massive datasets. However, performance depends heavily on data quality; improper data hygiene can degrade server performance (Tableau Software, n.d.-a).</p>
-        </section>
-
-        <section id="dimensions">
-            <h2>3. Analysis via the 6 Dimensions of KM</h2>
-            <div class="grid-container">
-                <div class="dimension-card">
-                    <h3>I. Strategy</h3>
-                    <p><strong class="jupyter-text">Jupyter — Knowledge Creation:</strong> Enables bottom-up experimentation and innovation (Granger & Perez, 2021).</p>
-                    <p><strong class="tableau-text">Tableau — Decision Support:</strong> Provides a "single source of truth" for centralized decision-making (Tableau Software, n.d.-c).</p>
-                </div>
-
-                <div class="dimension-card">
-                    <h3>II. Organizational Culture</h3>
-                    <p><strong class="jupyter-text">Jupyter — Openness:</strong> Promotes transparency through visible code (Beg et al., 2021).</p>
-                    <p><strong class="tableau-text">Tableau — Data Culture:</strong> Encourages shared behaviors and "intuitive, productive insights" across the org (Tableau Software, n.d.-f).</p>
-                </div>
-
-                <div class="dimension-card">
-                    <h3>III. Processes</h3>
-                    <p><strong class="jupyter-text">Jupyter — Iterative:</strong> Circular workflow: Code &rarr; Run &rarr; Refine.</p>
-                    <p><strong class="tableau-text">Tableau — Structured:</strong> Linear pipeline: Prep &rarr; Visualize &rarr; Publish &rarr; Consume.</p>
-                </div>
-
-                <div class="dimension-card">
-                    <h3>IV. Management</h3>
-                    <p><strong class="jupyter-text">Jupyter — Enabling:</strong> Leaders provide infrastructure; staff has autonomy.</p>
-                    <p><strong class="tableau-text">Tableau — Governance:</strong> Leaders define policies for access and security to ensure trust.</p>
-                </div>
-
-                <div class="dimension-card">
-                    <h3>V. Technology</h3>
-                    <p><strong class="jupyter-text">Jupyter — Interoperable:</strong> Built on open standards (JSON, Python). Portable.</p>
-                    <p><strong class="tableau-text">Tableau — Proprietary:</strong> Dependent on VizQL engine. Limited portability outside ecosystem.</p>
-                </div>
-
-                <div class="dimension-card">
-                    <h3>VI. Politics</h3>
-                    <p><strong class="jupyter-text">Jupyter — Low Friction:</strong> Open source (free) reduces budget tensions.</p>
-                    <p><strong class="tableau-text">Tableau — Resource Allocation:</strong> Licensing costs require negotiation and equitable access policies.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="references">
-            <h2>4. References</h2>
-            <div class="reference-list">
-                <p>Beg, M., Taka, J., Kluyver, T., Konovalov, A., Ragan-Kelley, M., Thiery, N. M., & Fangohr, H. (2021). Using Jupyter for reproducible scientific workflows. <em>Computing in Science & Engineering, 23</em>(2), 36–46. https://doi.org/10.1109/mcse.2021.3052101</p>
-
-                <p>Chen, E., & Asta, M. (2022). Using Jupyter Tools to design an interactive textbook to guide Undergraduate Research in Materials Informatics. <em>Journal of Chemical Education, 99</em>(10), 3601–3606. https://doi.org/10.1021/acs.jchemed.2c00640</p>
-
-                <p>Granger, B. E., & Perez, F. (2021). Jupyter: Thinking and storytelling with code and data. <em>Computing in Science & Engineering, 23</em>(2), 7–14. https://doi.org/10.1109/mcse.2021.3059263</p>
-
-                <p>Perez, F., & Granger, B. E. (2007). IPython: A system for interactive scientific computing. <em>Computing in Science & Engineering, 9</em>(3), 21–29. https://doi.org/10.1109/mcse.2007.53</p>
-
-                <p>Samuel, S., & Mietchen, D. (2024). Computational reproducibility of Jupyter notebooks from biomedical publications. <em>GigaScience, 13</em>, giad113. https://doi.org/10.1093/gigascience/giad113</p>
-
-                <p>Srinivasan, A. (2025). From a dashboard zoo to census: Understanding dashboard design at scale. <em>Tableau Research Blog</em>. https://www.tableau.com/blog</p>
-
-                <p>Tableau Software. (n.d.-a). <em>Tableau Blueprint: Governance</em>. https://help.tableau.com/current/blueprint/en-us/bp_governance.htm</p>
-
-                <p>Tableau Software. (n.d.-b). <em>What is VizQL?</em> https://www.tableau.com/drive/what-is-vizql</p>
-
-                <p>Tableau Software. (n.d.-c). <em>What Is Tableau?</em> https://www.tableau.com/why-tableau/what-is-tableau</p>
-
-                <p>Tableau Software. (n.d.-d). <em>Visual Interfaces to Data</em>. https://www.tableau.com/research/publications/visual-interfaces-data</p>
-
-                <p>Tableau Software. (n.d.-e). <em>Modern Data Architecture</em>. https://www.tableau.com/modern-data-architecture</p>
-
-                <p>Tableau Software. (n.d.-f). <em>Data Culture: Pave the way to data and AI success</em>. https://www.tableau.com/data-culture</p>
-            </div>
-        </section>
-
+  <header class="site-header">
+    <div class="container header-content">
+      <div>
+        <h1>Comparative Analysis of Knowledge Management Tools</h1>
+        <p class="subtitle">Jupyter Notebooks vs. Tableau</p>
+        <p class="meta">
+          <span>Student: Juan Jose Cuen Alcelay</span> ·
+          <span>Course: INFO 4307</span> ·
+          <span>Date: December 10, 2025</span>
+        </p>
+      </div>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">
+        ☰
+      </button>
     </div>
+    <nav id="mainNav" class="nav">
+      <div class="container nav-inner">
+        <a href="#intro">Introduction</a>
+        <a href="#comparative">Comparative Analysis</a>
+        <a href="#dimensions">6 KM Dimensions</a>
+        <a href="#references">References</a>
+      </div>
+    </nav>
+  </header>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Juan Jose Cuen Alcelay. All rights reserved.</p>
-    </footer>
+  <main class="container main-content">
+    <!-- Introduction & Definitions -->
+    <section id="intro" class="card">
+      <h2>1. Introduction &amp; Definitions</h2>
 
-    <script src="script.js"></script>
+      <article>
+        <h3>A. Jupyter Notebooks (The Researcher’s Workbench)</h3>
+        <p>
+          Jupyter Notebooks are open-source, interactive computing environments originally
+          developed from Project IPython. Perez and Granger (2007) describe the system as
+          providing “the best possible interactive environment for everyday computing tasks”
+          (p. 22). The notebook format combines executable code, narrative text, equations,
+          and visualizations into a unified document suitable for experimentation and
+          communication.
+        </p>
+        <p>
+          Granger and Perez (2021) frame this workflow as human-in-the-loop computing,
+          where users iteratively write code, run cells, and interpret results within a
+          transparent computing environment.
+        </p>
+        <p class="tagline"><strong>Primary users:</strong> Researchers, data scientists, engineers, and educators.</p>
+      </article>
+
+      <article>
+        <h3>B. Tableau (The Executive’s Dashboard)</h3>
+        <p>
+          Tableau is a modern Business Intelligence platform built on a proprietary
+          technology called VizQL. According to Tableau Software (n.d.-b), VizQL
+          “is essentially a translator of SQL queries that traditionally return numbers
+          and tables into an effortless visual analysis.”
+        </p>
+        <p>
+          Tableau emphasizes rapid discovery for non-technical users by allowing them
+          to describe what they want to see rather than how to compute it. The company
+          states that its mission is to “help people see and understand data”
+          (Tableau Software, n.d.-c).
+        </p>
+        <p class="tagline"><strong>Primary users:</strong> Executives, business analysts, and decision-makers.</p>
+      </article>
+    </section>
+
+    <!-- Comparative Analysis -->
+    <section id="comparative" class="card">
+      <h2>2. Comparative Analysis</h2>
+
+      <article>
+        <h3>A. Benefits &amp; Opportunities</h3>
+
+        <h4>Jupyter – Storytelling</h4>
+        <p>
+          Jupyter excels at narrative-driven analysis. Chen and Asta (2022) describe how
+          notebooks can integrate “prose, graphics, slides, and discussion questions” into
+          a single learning or research document (p. 3601). This structure enables analysts
+          to communicate findings while embedding code and outputs directly in context.
+        </p>
+        <p>
+          Granger and Perez (2021) further emphasize that narrative and computation coexist
+          to strengthen the clarity and reasoning behind analytic workflows.
+        </p>
+
+        <h4>Tableau – Democratization</h4>
+        <p>
+          Tableau removes the technical barrier of coding by allowing users to construct
+          visualizations through drag-and-drop operations. VizQL’s declarative interface
+          enables users to “describe what picture should be created, not necessarily how
+          to make it” (Tableau Software, n.d.-b).
+        </p>
+        <p>
+          Tableau also stresses organizational enablement: its product overview positions
+          the platform as a tool designed to empower people and organizations to make
+          meaningful use of their data (Tableau Software, n.d.-c).
+        </p>
+      </article>
+
+      <article>
+        <h3>B. Challenges &amp; Limitations</h3>
+
+        <h4>Jupyter – Reproducibility</h4>
+        <p>
+          A key challenge is computational reproducibility. Samuel and Mietchen (2024)
+          note that when notebooks are executed in different environments or run out of
+          order, results can diverge due to hidden execution states (p. 2). This affects
+          scientific transparency and repeatability.
+        </p>
+        <p>
+          Beg et al. (2021) add that notebook-based workflows may become difficult to
+          navigate when too much code resides in a single file, potentially affecting
+          readability (p. 38). They also emphasize that researchers benefit when
+          documentation structures reduce the need to “search for parts of the study”
+          across fragmented scripts (p. 3).
+        </p>
+
+        <h4>Tableau – Design Consistency &amp; Governance</h4>
+        <p>
+          At organizational scale, Tableau dashboards often suffer from inconsistency.
+          Srinivasan (2025) highlights the phenomenon of the “dashboard zoo,” where
+          ungoverned dashboard proliferation leads to clutter and variability in design
+          quality.
+        </p>
+        <p>
+          Tableau’s governance documentation warns that without proper processes, legacy
+          habits from “traditional reporting” can hinder scalability and cause duplication
+          of content (Tableau Software, n.d.-a). Governance is positioned as a requirement
+          to “enable, rather than restrict, access to trusted content” across the
+          organization.
+        </p>
+      </article>
+
+      <article>
+        <h3>C. Scalability &amp; Performance</h3>
+
+        <h4>Jupyter</h4>
+        <p>
+          Jupyter’s computing performance is strong because underlying libraries
+          (NumPy, SciPy, etc.) are often implemented in low-level languages like C and
+          Fortran (Perez &amp; Granger, 2007, p. 21). However, notebooks scale poorly in
+          readability. As Beg et al. (2021) explain, large monolithic notebooks can
+          become cluttered, prompting developers to migrate reusable code into external
+          modules (p. 38).
+        </p>
+
+        <h4>Tableau</h4>
+        <p>
+          Tableau is designed for horizontal scalability and can “connect natively to
+          and live query against your commonly used business applications” (Tableau
+          Software, n.d.-e). Performance depends heavily on data quality and workbook
+          design; Tableau warns that improper data hygiene can degrade server performance
+          (Tableau Software, n.d.-a).
+        </p>
+      </article>
+    </section>
+
+    <!-- 6 Dimensions -->
+    <section id="dimensions" class="card">
+      <h2>3. Analysis via the 6 Dimensions of Knowledge Management</h2>
+
+      <article>
+        <h3>I. Strategy</h3>
+        <p>
+          <strong>Jupyter — Knowledge Creation.</strong>
+          Jupyter enables bottom-up experimentation and exploration, aligning with
+          strategies centered on innovation and discovery (Granger &amp; Perez, 2021).
+        </p>
+        <p>
+          <strong>Tableau — Decision Support.</strong>
+          Tableau’s strategic purpose is to centralize analytics and provide a “single
+          source of truth” for organizational decision-makers (Tableau Software, n.d.-c).
+        </p>
+      </article>
+
+      <article>
+        <h3>II. Organizational Culture</h3>
+        <p>
+          <strong>Jupyter — Openness.</strong>
+          Notebooks promote transparency through visible code, allowing collaborators to
+          examine and understand the full analytic process (Beg et al., 2021).
+        </p>
+        <p>
+          <strong>Tableau — Data Culture.</strong>
+          Tableau defines data culture as shared behaviors and beliefs that encourage
+          the use of data across an organization, equipping people with “intuitive,
+          productive insights” (Tableau Software, n.d.-f).
+        </p>
+      </article>
+
+      <article>
+        <h3>III. Organizational Processes</h3>
+        <p>
+          <strong>Jupyter — Iterative Process.</strong>
+          Jupyter supports iterative workflows where users continuously refine code and
+          immediately observe results (Granger &amp; Perez, 2021).
+        </p>
+        <p>
+          <strong>Tableau — Structured Pipeline.</strong>
+          Tableau’s analytics lifecycle—data preparation, visualization, publication,
+          and consumption—reflects a more structured and governed process
+          (Tableau Software, n.d.-a).
+        </p>
+      </article>
+
+      <article>
+        <h3>IV. Management &amp; Leadership</h3>
+        <p>
+          <strong>Jupyter — Enabling Leadership.</strong>
+          Jupyter’s open-source ecosystem encourages autonomy, with leaders providing
+          infrastructure rather than prescribing tools (Granger &amp; Perez, 2021).
+        </p>
+        <p>
+          <strong>Tableau — Governance Leadership.</strong>
+          Tableau emphasizes governance as central to scaling analytics environments,
+          defining policies for access, security, and content management
+          (Tableau Software, n.d.-a).
+        </p>
+      </article>
+
+      <article>
+        <h3>V. Technology</h3>
+        <p>
+          <strong>Jupyter — Interoperability.</strong>
+          Jupyter notebooks are built on open standards (JSON, Python), enabling
+          portability across systems (Beg et al., 2021).
+        </p>
+        <p>
+          <strong>Tableau — Proprietary Architecture.</strong>
+          Tableau’s dashboards depend on its proprietary VizQL engine and ecosystem,
+          enabling rapid-fire visual analysis but limiting portability outside Tableau
+          environments (Tableau Software, n.d.-b; Tableau Software, n.d.-d).
+        </p>
+      </article>
+
+      <article>
+        <h3>VI. Politics</h3>
+        <p>
+          <strong>Jupyter — Low Political Friction.</strong>
+          As an open-source tool with no licensing costs, Jupyter reduces budget-related
+          political tension (inferred from Granger &amp; Perez, 2021).
+        </p>
+        <p>
+          <strong>Tableau — Resource Allocation.</strong>
+          Tableau’s licensing and infrastructure costs require organizational negotiation.
+          Tableau argues that proper governance “enables, rather than restricts,”
+          equitable access across departments (Tableau Software, n.d.-a).
+        </p>
+      </article>
+    </section>
+
+    <!-- References -->
+    <section id="references" class="card">
+      <h2>4. References (APA 7)</h2>
+
+      <details open>
+        <summary>Jupyter Sources</summary>
+        <ul class="reference-list">
+          <li>
+            Beg, M., Taka, J., Kluyver, T., Konovalov, A., Ragan-Kelley, M., Thiery, N. M., &amp; Fangohr, H. (2021).
+            <em>Using Jupyter for reproducible scientific workflows</em>.
+            <em>Computing in Science &amp; Engineering, 23</em>(2), 36–46.
+            https://doi.org/10.1109/mcse.2021.3052101
+          </li>
+          <li>
+            Chen, E., &amp; Asta, M. (2022).
+            Using Jupyter Tools to design an interactive textbook to guide Undergraduate Research in Materials Informatics.
+            <em>Journal of Chemical Education, 99</em>(10), 3601–3606.
+            https://doi.org/10.1021/acs.jchemed.2c00640
+          </li>
+          <li>
+            Granger, B. E., &amp; Perez, F. (2021).
+            Jupyter: Thinking and storytelling with code and data.
+            <em>Computing in Science &amp; Engineering, 23</em>(2), 7–14.
+            https://doi.org/10.1109/mcse.2021.3059263
+          </li>
+          <li>
+            Perez, F., &amp; Granger, B. E. (2007).
+            IPython: A system for interactive scientific computing.
+            <em>Computing in Science &amp; Engineering, 9</em>(3), 21–29.
+            https://doi.org/10.1109/mcse.2007.53
+          </li>
+          <li>
+            Samuel, S., &amp; Mietchen, D. (2024).
+            Computational reproducibility of Jupyter notebooks from biomedical publications.
+            <em>GigaScience, 13</em>.
+            https://doi.org/10.1093/gigascience/giad113
+          </li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Tableau Sources</summary>
+        <ul class="reference-list">
+          <li>
+            Srinivasan, A. (2025).
+            From a dashboard zoo to census: Understanding dashboard design at scale.
+            <em>Tableau Research Blog</em>.
+            https://www.tableau.com/blog
+          </li>
+          <li>
+            Tableau Software. (n.d.-a).
+            <em>Tableau Blueprint: Governance</em>.
+            https://help.tableau.com/current/blueprint/en-us/bp_governance.htm
+          </li>
+          <li>
+            Tableau Software. (n.d.-b).
+            <em>What is VizQL?</em>
+            https://www.tableau.com/drive/what-is-vizql
+          </li>
+          <li>
+            Tableau Software. (n.d.-c).
+            <em>What Is Tableau?</em>
+            https://www.tableau.com/why-tableau/what-is-tableau
+          </li>
+          <li>
+            Tableau Software. (n.d.-d).
+            <em>Visual Interfaces to Data</em>.
+            https://www.tableau.com/research/publications/visual-interfaces-data
+          </li>
+          <li>
+            Tableau Software. (n.d.-e).
+            <em>Modern Data Architecture</em>.
+            https://www.tableau.com/modern-data-architecture
+          </li>
+          <li>
+            Tableau Software. (n.d.-f).
+            <em>Data Culture: Pave the way to data and AI success</em>.
+            https://www.tableau.com/data-culture
+          </li>
+        </ul>
+      </details>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>INFO 4307 – Knowledge Management Tools and Technologies · Jupyter vs. Tableau</p>
+    </div>
+  </footer>
 </body>
 </html>

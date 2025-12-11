@@ -1,22 +1,43 @@
-function openTab(evt, tabName) {
-  // 1. Hide all tab content
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+// Mobile nav toggle
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
 
-  // 2. Remove "active" class from all buttons
-  tablinks = document.getElementsByClassName("tab-btn");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // 3. Show the current tab and add "active" class to the button that was clicked
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+if (navToggle && mainNav) {
+  navToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+  });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("KM Analysis Tabs Loaded.");
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const targetId = link.getAttribute("href").slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      mainNav?.classList.remove("open");
+    }
+  });
 });
+
+// Back-to-top button
+const backToTopBtn = document.getElementById("backToTop");
+
+if (backToTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 320) {
+      backToTopBtn.classList.add("show");
+      backToTopBtn.classList.remove("hide");
+    } else if (backToTopBtn.classList.contains("show")) {
+      backToTopBtn.classList.add("hide");
+      setTimeout(() => {
+        backToTopBtn.classList.remove("show");
+      }, 180);
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}

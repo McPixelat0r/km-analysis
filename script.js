@@ -8,7 +8,7 @@ if (navToggle && mainNav) {
   });
 }
 
-// Smooth scroll for nav links
+// Smooth scroll for in-page links
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const targetId = link.getAttribute("href").slice(1);
